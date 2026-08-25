@@ -1,0 +1,518 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    background: #191919;
+
+    font-family: "Courier New", monospace;
+
+    color: #71616a;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 40px 20px 60px;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* =========================================
+   MAIN SITE
+========================================= */
+
+.site {
+    width: 100%;
+    max-width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+/* =========================================
+   WINDOW
+========================================= */
+
+.window {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 2px solid #c9c0c5;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow:
+        4px 5px 0 rgba(225, 204, 213, 0.95);
+}
+
+
+/* =========================================
+   WINDOW BAR
+========================================= */
+
+.window-bar {
+    width: 100%;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 12px;
+
+    background: linear-gradient(
+        to bottom,
+        #f8eaee 0%,
+        #f0dfe5 100%
+    );
+
+    border-bottom: 1px solid #c9c0c5;
+
+    color: #796771;
+
+    font-size: 17px;
+
+    line-height: 1;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================
+   WINDOW BUTTONS
+========================================= */
+
+.window-buttons {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    color: #a9949d;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+.window-buttons span {
+    display: inline-block;
+}
+
+
+/* =========================================
+   ALBUM WINDOW
+========================================= */
+
+.album-window {
+    width: 100%;
+    max-width: 360px;
+}
+
+.album-window .window-content {
+    padding: 7px;
+}
+
+
+/* =========================================
+   CLICKABLE ALBUM IMAGE
+========================================= */
+
+.click-image {
+    width: 100%;
+
+    border: 1px solid #b9adb4;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transform-origin: center center;
+
+    transition:
+        filter 0.12s ease,
+        transform 0.12s ease;
+}
+
+.click-image:hover {
+    filter: brightness(1.04);
+}
+
+.click-image:focus-visible {
+    box-shadow:
+        0 0 0 2px #e6b8c8;
+}
+
+.click-image:active {
+    transform: scale(0.985);
+}
+
+.click-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+
+
+/* =========================================
+   CLICK ANIMATION
+========================================= */
+
+.click-image.clicked {
+    animation: pictureClick 0.2s ease;
+}
+
+@keyframes pictureClick {
+
+    0% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+
+    45% {
+        transform: scale(0.975);
+        filter: brightness(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+
+}
+
+
+/* =========================================
+   BIO BOX
+========================================= */
+
+.bio-box {
+    width: 100%;
+
+    min-height: 55px;
+
+    margin-top: 7px;
+
+    padding: 7px 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: #f7e9ed;
+
+    border: 1px solid #c7bbc1;
+
+    border-radius: 7px;
+
+    color: #74636c;
+
+    font-size: 15px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================
+   LIKES WINDOW
+========================================= */
+
+.likes-window {
+    width: 100%;
+    max-width: 360px;
+}
+
+.likes-content {
+    width: 100%;
+
+    padding: 11px 12px 10px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================
+   MESSAGE ROW
+========================================= */
+
+.message-row {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    width: 100%;
+}
+
+.message-row.left {
+    justify-content: flex-start;
+}
+
+.message-row.right {
+    justify-content: flex-end;
+
+    margin-top: 13px;
+}
+
+
+/* =========================================
+   AVATARS
+========================================= */
+
+.avatar {
+    width: 58px;
+    height: 58px;
+
+    flex: 0 0 58px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 1px solid #d0c5ca;
+
+    background: #f5e4e9;
+}
+
+
+/* =========================================
+   MESSAGE WRAPPER
+========================================= */
+
+.message-wrapper {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+/* =========================================
+   SPEAKER
+========================================= */
+
+.speaker {
+    margin: 4px 0 4px;
+
+    color: #76616a;
+
+    font-size: 15px;
+
+    line-height: 1.2;
+}
+
+.speaker span {
+    margin-right: 5px;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.message {
+    width: 100%;
+
+    padding: 8px 10px;
+
+    border: 1px solid #c9c2c7;
+
+    border-radius: 7px;
+
+    color: #4e454a;
+
+    font-size: 14px;
+
+    line-height: 1.35;
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.7);
+}
+
+.pink-message {
+    background: #f5e4e9;
+}
+
+.blue-message {
+    background: #e8ebf5;
+
+    text-align: right;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navigation {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 13px;
+
+    margin-top: 2px;
+}
+
+
+/* =========================================
+   NOTION BUTTONS
+========================================= */
+
+.nav-button {
+    min-width: 88px;
+    height: 39px;
+
+    padding: 5px 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1.5px solid #c5bcc0;
+
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    color: #76656c;
+
+    font-size: 17px;
+
+    text-decoration: none;
+
+    box-shadow:
+        4px 5px 0 #ddcdd3;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        background 0.12s ease;
+}
+
+.nav-button:hover {
+    background: #fff7f9;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        4px 6px 0 #ddcdd3;
+}
+
+.nav-button:active {
+    transform: translate(3px, 4px);
+
+    box-shadow:
+        1px 1px 0 #ddcdd3;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    margin-top: 8px;
+
+    color: #aaa1a5;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 17px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 25px 12px 40px;
+    }
+
+    .site {
+        max-width: 390px;
+    }
+
+    .album-window,
+    .likes-window {
+        max-width: 100%;
+    }
+
+    .navigation {
+        gap: 9px;
+    }
+
+    .nav-button {
+        min-width: 0;
+
+        padding: 5px 12px;
+
+        font-size: 15px;
+    }
+
+    .avatar {
+        width: 52px;
+        height: 52px;
+
+        flex-basis: 52px;
+    }
+
+    .message {
+        font-size: 13px;
+    }
+
+    .bio-box {
+        font-size: 14px;
+    }
+
+    .footer {
+        font-size: 15px;
+    }
+}
